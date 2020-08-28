@@ -13,6 +13,9 @@ var score;
 
 
 function preload(){
+  jumpSound=loadSound("jump.mp3");
+  dieSound = loadSound("die.mp3");
+  checkpointSound = loadSound("checkpoint.mp3");
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadImage("trex_collided.png");
   
@@ -76,6 +79,7 @@ function draw() {
   
   if(keyDown("space")) {
     trex.velocityY = -10;
+    jumpSound.play();
   }
   
   trex.velocityY = trex.velocityY + 0.8
